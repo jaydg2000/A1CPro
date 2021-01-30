@@ -1,0 +1,9 @@
+C:\Projects\A1CPro\A1CPro.Domain\bin\Debug\netstandard2.0\A1CPro.Domain.deps.json
+C:\Projects\A1CPro\A1CPro.Domain\bin\Debug\netstandard2.0\A1CPro.Domain.dll
+C:\Projects\A1CPro\A1CPro.Domain\bin\Debug\netstandard2.0\A1CPro.Domain.pdb
+C:\Projects\A1CPro\A1CPro.Domain\obj\Debug\netstandard2.0\A1CPro.Domain.AssemblyInfoInputs.cache
+C:\Projects\A1CPro\A1CPro.Domain\obj\Debug\netstandard2.0\A1CPro.Domain.AssemblyInfo.cs
+C:\Projects\A1CPro\A1CPro.Domain\obj\Debug\netstandard2.0\A1CPro.Domain.csproj.CoreCompileInputs.cache
+C:\Projects\A1CPro\A1CPro.Domain\obj\Debug\netstandard2.0\A1CPro.Domain.dll
+C:\Projects\A1CPro\A1CPro.Domain\obj\Debug\netstandard2.0\A1CPro.Domain.pdb
+C:\Projects\A1CPro\A1CPro.Domain\obj\Debug\netstandard2.0\A1CPro.Domain.csprojAssemblyReference.cache

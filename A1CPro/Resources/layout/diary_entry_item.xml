@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:padding="16dp"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="6dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="4dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/labelMedsEvening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="PM"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textSize="8sp"
+                app:layout_constraintStart_toStartOf="@+id/labelMedsMorning"
+                app:layout_constraintTop_toBottomOf="@+id/labelMedsMorning" />
+
+            <TextView
+                android:id="@+id/labelMedsMorning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="AM"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textSize="8sp"
+                app:layout_constraintStart_toStartOf="@+id/labelWeightMornMeds"
+                app:layout_constraintTop_toBottomOf="@+id/labelWeightMornMeds" />
+
+            <TextView
+                android:id="@+id/labelWeight"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_horizontal"
+                android:text="Weight"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/labelMedsEvening"
+                app:layout_constraintStart_toStartOf="@+id/textViewWeight"
+                app:layout_constraintTop_toBottomOf="@+id/textViewWeight" />
+
+            <TextView
+                android:id="@+id/labelWeightMornMeds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Meds Taken"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/labelMorningReading"
+                android:layout_width="66dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="BGL Reading"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMorningReading" />
+
+            <TextView
+                android:id="@+id/textViewMorningReading"
+                android:layout_width="63dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:text=""
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                tools:text="199"
+                app:layout_constraintEnd_toEndOf="@+id/labelMorningReading"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/labelBloodPressure"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="Blood Pressure"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/labelMorningReading"
+                app:layout_constraintTop_toBottomOf="@+id/textViewBloodPressure" />
+
+            <TextView
+                android:id="@+id/textViewBloodPressure"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                tools:text="--"
+                app:layout_constraintLeft_toRightOf="@+id/textViewBGL"
+                app:layout_constraintEnd_toEndOf="@+id/labelBloodPressure"
+                app:layout_constraintRight_toLeftOf="@+id/textViewWeight"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewWeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                tools:text="285"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/labelMedsMorning"
+                app:layout_constraintStart_toEndOf="@+id/textViewBloodPressure"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewMorningMeds"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                tools:text="Yes"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelWeightMornMeds" />
+
+            <TextView
+                android:id="@+id/textViewEveningMeds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                tools:text="No"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textViewMorningMeds"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMorningMeds" />
+
+            <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Nov 11, 2017"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="9sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,12 @@
+C:\Projects\A1CPro\A1CPro.Infrastructure\bin\Debug\netstandard2.0\A1CPro.Data.deps.json
+C:\Projects\A1CPro\A1CPro.Infrastructure\bin\Debug\netstandard2.0\A1CPro.Data.dll
+C:\Projects\A1CPro\A1CPro.Infrastructure\bin\Debug\netstandard2.0\A1CPro.Data.pdb
+C:\Projects\A1CPro\A1CPro.Infrastructure\bin\Debug\netstandard2.0\A1CPro.Domain.dll
+C:\Projects\A1CPro\A1CPro.Infrastructure\bin\Debug\netstandard2.0\A1CPro.Domain.pdb
+C:\Projects\A1CPro\A1CPro.Infrastructure\obj\Debug\netstandard2.0\A1CPro.Data.csprojAssemblyReference.cache
+C:\Projects\A1CPro\A1CPro.Infrastructure\obj\Debug\netstandard2.0\A1CPro.Data.AssemblyInfoInputs.cache
+C:\Projects\A1CPro\A1CPro.Infrastructure\obj\Debug\netstandard2.0\A1CPro.Data.AssemblyInfo.cs
+C:\Projects\A1CPro\A1CPro.Infrastructure\obj\Debug\netstandard2.0\A1CPro.Data.csproj.CoreCompileInputs.cache
+C:\Projects\A1CPro\A1CPro.Infrastructure\obj\Debug\netstandard2.0\A1CPro.Data.csproj.CopyComplete
+C:\Projects\A1CPro\A1CPro.Infrastructure\obj\Debug\netstandard2.0\A1CPro.Data.dll
+C:\Projects\A1CPro\A1CPro.Infrastructure\obj\Debug\netstandard2.0\A1CPro.Data.pdb
