@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gdc.diary.ActivityEntryDetails">
+
+  <EditText
+      android:id="@+id/editTextGlucoseReading"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="24dp"
+      android:ems="10"
+      android:textSize="30dp"
+      android:hint="Sugar reading"
+      android:inputType="number"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textViewDetailsReadingDate" />
+
+  <EditText
+      android:id="@+id/editTextWeight"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="24dp"
+      android:ems="10"
+      android:textSize="30dp"
+      android:hint="Weight"
+      android:inputType="number"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editTextGlucoseReading" />
+
+  <LinearLayout
+        android:id="@+id/linearLayoutBloodPressure"
+        android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editTextWeight">
+    
+        <EditText
+            android:id="@+id/editTextSystolic"
+            android:hint="Systolic"
+            android:inputType="number"
+              android:layout_marginEnd="8dp"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="24dp"
+              android:ems="10"
+              android:textSize="20dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="/"
+      android:layout_marginTop="24dp"
+      android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/editTextDiastolic"
+            android:hint="Diastolic"
+            android:inputType="number"
+          android:layout_marginEnd="8dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginTop="24dp"
+          android:ems="10"
+          android:textSize="20dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+  <CheckBox
+      android:id="@+id/checkBoxTookMorningMeds"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="32dp"
+      android:text="Took morning meds"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/linearLayoutBloodPressure" />
+
+  <CheckBox
+      android:id="@+id/checkBoxTookEveningMeds"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="8dp"
+      android:layout_marginTop="32dp"
+      android:text="Took evening meds"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/linearLayoutBloodPressure" />
+
+  <TextView
+      android:id="@+id/textViewDetailsReadingDate"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:text=""
+      android:textStyle="bold"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:layout_editor_absoluteX="8dp"
+      tools:text="Sunday, Nov 11, 2017"/>
+</android.support.constraint.ConstraintLayout>

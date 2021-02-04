@@ -112,6 +112,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.7.335, )"
             }
           },
           "imports": [
@@ -172,6 +176,10 @@
             "Microcharts": {
               "target": "Package",
               "version": "[0.9.5.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             },
             "Xamarin.Android.Support.Constraint.Layout": {
               "target": "Package",

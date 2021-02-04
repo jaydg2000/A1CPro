@@ -297,3 +297,14 @@ C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\bin\com.green.a1cpro.apk
 C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\bin\com.green.a1cpro.aab
 C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\bin\com.green.a1cpro.apks
 C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\src\com\green\a1cpro\R.java
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\res\layout\activity_entry_details.xml
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\src\crc643174fce518eee543\DiaryEntryActivity.java
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\assets\Newtonsoft.Json.dll
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\assets\SQLite-net.dll
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\assets\SQLitePCLRaw.batteries_v2.dll
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\assets\SQLitePCLRaw.core.dll
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\assets\SQLitePCLRaw.lib.e_sqlite3.android.dll
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\assets\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\assets\System.Buffers.dll
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\assets\System.Memory.dll
+C:\Projects\A1CPro\A1CPro\obj\Debug\90\android\assets\System.Runtime.CompilerServices.Unsafe.dll

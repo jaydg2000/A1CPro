@@ -65,7 +65,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="DashboardActivity.cs" />
+    <Compile Include="DiaryEntryActivity.cs" />
     <Compile Include="DiaryRecyclerViewAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -109,6 +111,9 @@
     <PackageReference Include="Microcharts">
       <Version>0.9.5.9</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Constraint.Layout">
       <Version>2.0.1</Version>
     </PackageReference>
@@ -140,6 +145,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\diary_entry_item.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_entry_details.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
