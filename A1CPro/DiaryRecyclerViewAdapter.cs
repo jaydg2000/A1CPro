@@ -7,7 +7,7 @@ using A1CPro.Domain;
 
 namespace A1CPro
 {
-    class DiaryRecyclerViewAdapter : RecyclerView.Adapter
+    public class DiaryRecyclerViewAdapter : RecyclerView.Adapter
     {
         private Android.Graphics.Color _goodColor = Android.Graphics.Color.DarkGreen;
         private Android.Graphics.Color _badColor = Android.Graphics.Color.Red;

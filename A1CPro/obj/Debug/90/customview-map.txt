@@ -8,6 +8,7 @@ android.support.v7.widget.CardView;obj\Debug\90\res\layout\diary_entry_item.xml
 android.support.v7.widget.RecyclerView;obj\Debug\90\res\layout\activity_dashboard.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
+Button;obj\Debug\90\res\layout\activity_entry_details.xml
 cache-path;C:\Projects\A1CPro\A1CPro\obj\Debug\90\lp\43\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 CheckBox;obj\Debug\90\res\layout\activity_entry_details.xml
 color;obj\Debug\90\res\values\colors.xml

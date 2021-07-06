@@ -29,26 +29,28 @@ namespace A1CPro.Data.Data
 
         private DiaryDatabase(string dbPath)
         {
-            _database = new SQLiteAsyncConnection(dbPath);
+            _database = new SQLiteAsyncConnection(dbPath, true);
             _database.CreateTableAsync<DiaryEntryDAO>().Wait();
         }
 
-        public Task<List<DiaryEntryDAO>> GetDiary(DateTime startDate, DateTime endDate)
+        public async Task<List<DiaryEntryDAO>> GetDiary(DateTime startDate, DateTime endDate)
         {
-            return _database.Table<DiaryEntryDAO>()
-                .Where(e => e.DateOfReading.Date >= startDate.Date && e.DateOfReading.Date <= endDate.Date)
+            var rows = await _database.Table<DiaryEntryDAO>()
+                //.Where(e => e.DateOfReading >= startDate.Date && e.DateOfReading <= endDate.Date)
+                .OrderByDescending(t => t.DateOfReading)
                 .ToListAsync();
+            return rows;
         }
 
-        public Task<int> SaveDiaryEntry(DiaryEntryDAO dao)
+        public async Task<int> SaveDiaryEntry(DiaryEntryDAO dao)
         {
-            if (dao.ID == 0)
+            if (dao.ID == DiaryEntryDAO.ID_NEW)
             {
-                return _database.InsertAsync(dao);
+                return await _database.InsertAsync(dao);
             }
             else
             {
-                return _database.UpdateAsync(dao);
+                return await _database.UpdateAsync(dao);
             }
         }
 

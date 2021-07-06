@@ -9,6 +9,11 @@ namespace A1CPro.Domain
     {
         public double Estimate(IList<DiaryEntry> readings)
         {
+            if (readings.Count < 2)
+            {
+                return 0.0;
+            }
+
             var averageBGL = (int)readings.Average(r => r.Sugar);
             var estimatedA1C = (averageBGL + 77.3) / 35.6;
 

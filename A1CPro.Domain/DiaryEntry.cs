@@ -5,6 +5,13 @@ namespace A1CPro.Domain
     [Serializable]
     public class DiaryEntry
     {
+        public DiaryEntry()
+        {
+            Id = -1;
+            BloodPressure = new BloodPressureReading();
+            DateOfReading = DateTime.Now;
+        }
+
         public int Id { get; set; }
         public DateTime DateOfReading { get; set; }
         public int Sugar { get; set; }

@@ -1,7 +1,10 @@
-﻿using A1CPro.Domain;
+﻿using A1CPro.Data.Data;
+using A1CPro.Data.Mappers;
+using A1CPro.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace A1CPro.Data
 {
@@ -11,14 +14,41 @@ namespace A1CPro.Data
         private DateTime _cachedDiaryStartDate;
         private DateTime _cachedDiaryEndDate;
 
-        public IReadOnlyList<DiaryEntry> GetDiary(DateTime startDate, DateTime endDate)
+        public async Task<IReadOnlyList<DiaryEntry>> GetDiary(DateTime startDate, DateTime endDate, bool forceReload = false)
         {
-            if (_diary == null || !startDate.Date.Equals(_cachedDiaryStartDate.Date) || !endDate.Date.Equals(_cachedDiaryEndDate.Date))
+            await EraseAllEntries();
+            if (forceReload 
+                || _diary == null 
+                || !startDate.Date.Equals(_cachedDiaryStartDate.Date) 
+                || !endDate.Date.Equals(_cachedDiaryEndDate.Date))
             {
-                _diary = LoadMockDiary(startDate, endDate);
+                _diary = await ReadDiaryFromStore(startDate, endDate);
+
+                // ---------- TEMP ----------
+                //if (_diary.Count < 1)
+                //{
+                //_diary = LoadMockDiary(startDate, endDate);
+                //mockDiary.ForEach(async d => await SaveDiaryEntry(d));
+                //_diary = await ReadDiaryFromStore(startDate, endDate);
+                //}
             }
 
             return _diary.AsReadOnly();
+        }
+
+        private async Task<List<DiaryEntry>> ReadDiaryFromStore(DateTime startDate, DateTime endDate)
+        {
+            var mapper = new DiaryEntryMapper();
+            var db = DiaryDatabase.Instance;
+            var dbModels = await db.GetDiary(startDate, endDate);
+
+            if (dbModels.Count > 0)
+            {
+                _cachedDiaryStartDate = startDate.Date;
+                _cachedDiaryEndDate = endDate.Date;
+                return dbModels.Select(m => mapper.Map(m)).ToList();
+            }
+            return new List<DiaryEntry>();
         }
 
         private List<DiaryEntry> LoadMockDiary(DateTime startDate, DateTime endDate)
@@ -29,6 +59,12 @@ namespace A1CPro.Data
             var diary = new List<DiaryEntry>();
             for (int x = numberOfDays; x >= 0; x--)
             {
+                // simulate missing some days
+                if (random.Next(1, 10) < 3 )
+                {
+                    continue;
+                }
+
                 diary.Add(new DiaryEntry
                 {
                     Id = x,
@@ -51,20 +87,16 @@ namespace A1CPro.Data
             return diary;
         }
 
-        public int SaveDiaryEntry(DiaryEntry entry)
+        public async Task<int> SaveDiaryEntry(DiaryEntry entry)
         {
-            if (entry.Id == -1)
-            {
-                entry.Id = _diary.Max(e => e.Id) + 1;
-                _diary.Add(entry);
-            }
-            else
-            {
-                var existingEntry = _diary.FirstOrDefault(e => e.Id == entry.Id);
-                existingEntry?.Patch(entry);
-            }
+            var mapper = new DiaryEntryDAOMapper();
+            var dao = mapper.Map(entry);
+            return await DiaryDatabase.Instance.SaveDiaryEntry(dao);
+        }
 
-            return entry.Id;
+        public async Task EraseAllEntries()
+        {
+            await DiaryDatabase.Instance.DeleteAll();
         }
     }
 }

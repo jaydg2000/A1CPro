@@ -29,7 +29,7 @@
             android:layout_height="160dp"/>
         <TextView
             android:id="@+id/textViewA1CPrediction"
-            android:text="Estimated A1C:   5.9"
+            android:text="Estimated A1C:   ---"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

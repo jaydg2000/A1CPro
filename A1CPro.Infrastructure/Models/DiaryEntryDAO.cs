@@ -7,7 +7,9 @@ namespace A1CPro.Data.Models
 {
     public class DiaryEntryDAO
     {
-        [PrimaryKey]
+        public static readonly int ID_NEW = -1;
+
+        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public DateTime DateOfReading { get; set; }
         public int Sugar { get; set; }

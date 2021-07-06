@@ -24,6 +24,7 @@ namespace A1CPro
         private EditText _editTextBloodPressureDiastolic;
         private CheckBox _checkBoxTookMorningMeds;
         private CheckBox _checkBoxTookEveningMeds;
+        private Button _buttonSave;
 
         private DiaryEntry _entry;
 
@@ -39,33 +40,20 @@ namespace A1CPro
             _editTextBloodPressureDiastolic = FindViewById<EditText>(Resource.Id.editTextDiastolic);
             _checkBoxTookMorningMeds = FindViewById<CheckBox>(Resource.Id.checkBoxTookMorningMeds);
             _checkBoxTookEveningMeds = FindViewById<CheckBox>(Resource.Id.checkBoxTookEveningMeds);
+            _buttonSave = FindViewById<Button>(Resource.Id.buttonSave);
+
+            _buttonSave.Click += _buttonSave_Click;
 
             InitDiaryEntry();
             LoadForm();
         }
 
-        protected override void OnPause()
-        {
-            base.OnPause();
-            PatchEntryFromForm();
-            if (_entry.Sugar > 0)
-            {
-                var data = new Intent();
-                var entryJson = JsonConvert.SerializeObject(_entry);
-                data.PutExtra(Constants.EXTRA_DIARY_ENTRY, entryJson);
-                SetResult(Android.App.Result.Ok, data);
-            }
-            else
-            {
-                SetResult(Android.App.Result.Canceled);
-            }
-        }
-
         private void InitDiaryEntry()
         {
             if (this.Intent.HasExtra(Constants.EXTRA_DIARY_ENTRY))
-            {
-                _entry = (DiaryEntry)this.Intent.GetSerializableExtra(Constants.EXTRA_DIARY_ENTRY);
+            {                
+                var intentPayload = this.Intent.GetStringExtra(Constants.EXTRA_DIARY_ENTRY);
+                _entry = JsonConvert.DeserializeObject<DiaryEntry>(intentPayload);
             }
             else
             {
@@ -85,9 +73,15 @@ namespace A1CPro
             }
 
             _editTextSugar.Text = _entry.Sugar.ToString();
-            _editTextWeight.Text = _entry.Weight.ToString();
-            _editTextBloodPressureSystolic.Text = _entry.BloodPressure.SystolicBloodPressue.ToString();
-            _editTextBloodPressureDiastolic.Text = _entry.BloodPressure.DiastolicBloodPressure.ToString();
+            if (_entry.Weight > 0)
+            {
+                _editTextWeight.Text = _entry.Weight.ToString();
+            }
+            if (_entry.BloodPressure.SystolicBloodPressue > 0)
+            {
+                _editTextBloodPressureSystolic.Text = _entry.BloodPressure.SystolicBloodPressue.ToString();
+                _editTextBloodPressureDiastolic.Text = _entry.BloodPressure.DiastolicBloodPressure.ToString();
+            }
             _checkBoxTookMorningMeds.Checked = _entry.MorningMedsTaken;
             _checkBoxTookEveningMeds.Checked = _entry.EveningMedsTaken;
         }
@@ -121,6 +115,23 @@ namespace A1CPro
                     DiastolicBloodPressure = int.Parse(diastolic)
                 };
             }
+        }
+
+        private void _buttonSave_Click(object sender, EventArgs e)
+        {
+            PatchEntryFromForm();
+            if (_entry.Sugar > 0)
+            {
+                var data = new Intent();
+                var entryJson = JsonConvert.SerializeObject(_entry);
+                data.PutExtra(Constants.EXTRA_DIARY_ENTRY, entryJson);
+                SetResult(Android.App.Result.Ok, data);
+            }
+            else
+            {
+                SetResult(Android.App.Result.Canceled);
+            }
+            Finish();
         }
     }
 }
